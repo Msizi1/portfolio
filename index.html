@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>My Sofware Development Portfolio</title>
+    <style>
+      *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+}
+body{
+      background: #080808;
+      color: #fff;
+
+}
+#header{
+      width: 100%;
+      height: 100vh;
+      background-image: url(https://wallpaperaccess.com/full/2454622.jpg);
+      background-size: cover;
+      background-position: center;
+}
+.container{
+      padding: 10px 10%;
+
+}
+nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+}
+.logo{
+      width: 140px;
+
+}
+nav ul li{
+      display: inline-block;
+      list-style: none;
+      margin: 10px 20px;
+}
+nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+}
+nav ul li a::after{
+      content: '';
+      width: 0;
+      height: 3px;
+      background: orange;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.5s;
+}
+nav ul li a:hover::after{
+      width: 100%;
+
+}
+.header-text{
+      margin-top: 5%;
+      font-size: 20px;
+}
+.header-text h1{
+      font-size: 40px;
+      margin-top: 5%;
+}
+.header-text h1 span{
+      color: orange;
+
+}
+/*-------about-------*/
+#about-me{
+      padding: 80px 0;
+      color: #ababab;
+
+}
+.row{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+}
+.sub-title{
+      font-size: 60px;
+      font-weight:  600;
+      color: #fff;
+
+}
+.about-me-1{
+      flex-basis: 35%;
+}
+.about-me-1 img{
+      width: 100%;
+      border-radius: 15px;
+}
+.about-me-2{
+      flex-basis: 60%;
+}
+.tab-titles{
+      display: flex;
+      margin: 20px 0 40px;
+}
+.tab-links{
+      margin-right: 50px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+}
+.tab-links::after{
+      content: '';
+      width: 0;
+      height: 3px;
+      background: orange;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      transition: 0.5s;
+}
+.tab-links.active-link::after{
+      width: 50%;
+}
+.tab-contents ul li{
+list-style: none;
+margin: 10px 0;
+}
+.tab-contents ul li span{
+      color: orange;
+      font-size: 14px;
+}
+.tab-contents{
+      display: none;
+}
+.tab-contents.active-tab{
+      display: block;
+}
+/*--------------------services-------------*/
+#services{
+      padding: 30px 0;
+
+}
+.services-lists{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+}
+
+.services-lists div{
+      background: #262626;
+      padding: 40px;
+      font-size: 13px;
+      font-weight: 300;
+      border-radius: 10px;
+      transition: background 0.5s, transform 0.5s;
+}
+
+.services-lists div i{
+      font-size: 45px;
+      margin-bottom: 20px;
+}
+
+.services-lists div h2{
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 15px;
+}
+
+.services-lists div a{
+      text-decoration: none;
+      color: #fff;
+      font-size: 12px;
+      margin-top: 20px;
+      display: inline-block; 
+}
+
+.services-lists div:hover {
+      background: orange;
+      transform: translate(0px, -15px);
+  }
+  
+/*--------------------portfolio-------------*/
+#portfolio {
+      padding: 50px 0;
+  }
+  
+  .portfolio-lists {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+  }
+  
+  .portfolio-item {
+      position: relative; /* Ensure the child elements are positioned relative to this container */
+      overflow: hidden; /* Ensure scaled image doesn't overflow */
+  }
+  
+  .portfolio-item img {
+      width: 100%;
+      border-radius: 10px;
+      aspect-ratio: 1/1;
+      display: block;
+      transition: transform 0.5s;
+      transform-origin: center center; /* Add this to ensure the image scales from the center */
+  }
+  
+  .layer {
+      position: absolute; /* Position the layer absolutely within the portfolio-item */
+      top: 0; /* Position at the top */
+      left: 0; /* Position at the left */
+      width: 100%;
+      height: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), orange);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      text-align: center;
+      font-size: 14px;
+      transition: height 0.5s;
+      z-index: 1; /* Ensure the layer appears in front of the image */
+  }
+  
+  .layer h3 {
+      font-weight: 500;
+      margin-bottom: 20px;
+  }
+  
+  .layer a {
+      margin-top: 20px;
+      color: orange;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 60px;
+      background: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+  }
+  
+  .portfolio-item:hover img {
+      transform: scale(1.2);
+  }
+  
+  .portfolio-item:hover .layer {
+      height: 100%;
+  }
+
+ /*---------------contact-------------*/
+ 
+ .contact-left{
+      flex-basis: 35%;
+ } 
+ .contact-right{
+      flex-basis: 60%;
+ } 
+ .contact-left p{
+      margin-top: 40px;
+
+ }
+ .contact-left p i{
+      color: orange;
+      margin-right: 19px;
+      font-size:25px;
+ }
+
+ .social-icons{
+      margin-top: 40px;
+ }
+ .social-icons a{
+      text-decoration: none;
+      font-size: 30px;
+      margin-right: 15px;
+      color:#ababab;
+      display: inline-block;
+      transition: transform 0.5s;
+
+ }
+ .social-icons a:hover{
+      color: orange;
+      transform: translateY(-5px);
+ }
+ .btn{
+      display: block;
+      margin: 50px auto;
+      width: fit-content;
+      border:  1px solid orange;
+      padding: 14px 50px ;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      transition: background 0.5s;
+ }
+ .btn:hover{
+      background: orange;
+ }
+.btn.btn2{
+      display: inline-block;
+      background: orange;
+}
+.contact-right form{
+      width: 100%;
+}
+form input, form textarea{
+      width: 100%;
+      border:0;
+      outline: none;
+      background: #262626;
+      padding: 15px;
+      margin: 15px 0;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 6px;
+}
+
+form .btn2{
+      padding: 14px 60px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+}
+.copyright{
+      width: 100;
+      text-align: center;
+      padding: 25px 0;
+      background: #262626;
+      font-weight: 300;
+      margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px){
+      .header-text{
+            margin-top: 100%;
+            font-size: 16px;
+      }
+      .header-text h1{
+            font-size: 30px;
+      }
+      nav .fas{
+            display: block;
+            font-size: 25px;
+      }
+      nav ul{
+            background: orange;
+            position: fixed;
+            top:0;
+            right: -200px;
+            width: 200px;
+            height: 100vh;
+            padding-top: 50px;
+            z-index: 2;
+            transition: right 0.5s;
+      }
+      nav ul li{
+            display:block;
+            margin: 25px;
+
+      }
+      nav ul .fas{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            cursor: pointer;
+      }
+}
+    </style>
+    <script src="https://kit.fontawesome.com/786a3837f6.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+      <div id="header">
+            <div class="container">
+                  <nav>
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAPoA+gMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAABAUGAwIB/9oACAEBAAAAAM+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHeccXYQ5j5B4lj0rfAAXcuCjz+6wUmhh9/eOjTNiydcAGkqoAXF/kLqxxknaZeq1krtRUAAa55iZ5aaTIxdXJprGZjJWuzV1yyQAbTFix0+Thtp88TchB186BK9YUAethkSVraSCi7XNVu3z8TV1caXZY2IAd9EcYlgKm3oYl++Sc15lX9LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD6AAAABO//8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/9oACgICEAMQAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMXjdsMXTnbPZjhqPTkA4ay7SvJrrOd53248Oz6PMA82vRlfDv144ajF3OVxfp8qA53F1M01Ok5aO2ed3KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/xAA4EAABAwIFAQUECAcBAAAAAAABAgMEABEFEhVRkhATIjEyUyEwQVIUICNicYCBkTNAQlRhY3Kx/9oACAEBAAE/APzCx47klzs27XsT7a0eZu1yrR5m7XKtHmbtcqfw6RHaLjhRamMNkyGkuoyZTWjzN2uVaPM3a5Vo8zdrlWjzN2uVIiOrkqjpy5wSONaPM3b5Vo8zdrlRwibs3yp6O8wbOtlP1GsLlutoWMgCh8TWjzN2uVOIU2taFeKSQfeYIi7r69kAVPxF2K8G20oPcBN61qV6bVa1K9NqpWIvymw2tKAL39lRsUjMMNNFDl0prWovpu1rUX03ajviQ2HA2pKT4ZqkyW4rRcX+idzWEXcmPun5SeRokAEk2AFzWpQfXFNSWH79k6lVLbQ6hSFpCknxBqWwYz62v26QY30qShB8g9q+uKt5Jq9lgK95giLMOr3crE155z31sOw/tyHnh9n8B81Pvtxmi4upMlyU6XF/oNhWCIs2+vdYFTV5Icg/6yOkMrEuPk8e0HTGCDM/BtPTDI3YRwSO+53jUp9MZhbp+HgKBBAI8CL1jbf8B38U+8wtGWCz/m5pcCA4tS1tgqJuTnrTcO9JPM1OhwWIrq22wF9cOgGSQ64LNA86ddajtFazZCalynJbudXgPKnbphKMsJB+ZSjUxhUlhTSVhNyK0R310VDw1qKc5Vncp55thtTjhskU86p91bqvFRvWHRvpMkAjuI7yumMSM7wYHgioDnaQ2D9y3GsUbzwnN0EK92fA019hDR9xn/wfVgQDKVnXcMilrajtFSrJQgVMmLluXPsQPKnrDRkiMJ2bFSZjMTJ2mbvbCo+IRpLmRGbNb4jpPW+ZLiHlk5DYdMOjfRowBHfX3l9DhkJRJLR5GmWW2EZG02TTiA42tHzJIqxHsPukJzrQj5lAfuankiG/lBJKbV2L3pL4muxe9Jzia7J30l8TUCGZbmzafNSEJQlKEgBIFgBU6NiEtfkSGx5RnrSZ3yI5VpM75EcqfivMOIacAClUBYAD4VjSryW07N0w6WHm3R/SqgQQCDcEXFY0xZTT4/4NYXG7eSFHyN+09JWKojPFoNZ7Vrg/tjzqHiQlulvssndv0nN9lMfT9+/L3UZaG5DK13ypWCa1iHs7WsxNna1mHs7T+LRlsOoQHMykEVhs2PEacDme6l1rMPZzjWsQ9nONaxD2c41rEPZ3jT8tp6e2/wB7s0lFazD2dqc+mTJW6i+U2A6Q8UZajttu58yal4jDkR3GrOVCnw4rCUWczeKqOMxQDlDhNKUpalKUbkkknpCfEeS26q+UXBrWYeznGsRkMyXw41m8gBv+YY+J/n20ILaCUjyiv//EACYRAAIDAAEBCAMBAAAAAAAAAAECAAMRBCESExQgIjFBYRBgcVH/2gAIAQIBAT8A/YrG7CM0VuQwBAWL3+jezkZ+RpxOka29RpUCJbYUdz8DpBfcfYQclwcdYCCARLrihAX3lNzOxDebknK/6Yt6BQMboIjhxoBjMEBJMAbkPp6KJfi1YJx3REOth2XOLHAWDK6xvwIgN1vWV+i4f3PNyOprX7mj/YWVQST0hbvn9TYogepQAGWclgVTIlCtUD8kTjkCzDOS/sgi13AaoI2MHVvV7wHQD5XqSwgtPDV/cFKBSvXDPDV/c8NX9xqUYAHeggAAAE7hO12uu7DQhJJ38PUjnTFAUAD9j//EACARAAICAQQDAQAAAAAAAAAAAAABAhESECAhMSJBYDL/2gAIAQMBAT8A+iXLPE8SolRGlaRjExWkVZJVuj2YjVaflEeySbYlSO2PhD5W6PvXpFMiZckuiK9lx3ptGTLZkzJlvTJmT0Ta+k//2Q==" alt="logo" class = "logo">
+                        <ul id ="sidemenu">
+                              <li><a href="#about-me">About Me</a></li>
+                              <li><a href="#services">Services</a></li> 
+                              <li><a href="#portfolio">My Work</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                              <i class="fas fa-times" onclick="closemenu()"></i>
+                          </ul>
+                          <i class="fas fa-bars" onclick="openmenu()"></i>
+                  </nav>
+                  <div class="header-text">
+                        <p>Web developer</p>
+                        <h1> Hi, I'm <span>Ezra</span><br>Mthethwa From South Africa </h1>
+                  </div>
+            </div>
+      </div>
+<!-- --------personal Info ---->
+ <div id="about-me"></div>
+      <div class="container">
+            <div class="row">
+                  <div class="about-me-1">
+                        <img src = "images/photo.png" class="photo">
+                  </div>
+                  <div class="about-me-2">
+                        <h1 class ="sub-title">About Me</h1>
+                        <p>Hi there! I'm a passionate coder and tech enthusiast with a strong foundation in HTML, CSS, and JavaScript, skills I sharpened through freeCodeCamp courses.</p>
+                        <p> My journey in tech has led me to acquire extensive knowledge in full-stack development, including working with relational databases like SQLite and using Flask for web applications.</p>
+                        <p> I love tackling challenging projects that push me to innovate and create. In addition to coding, I've mastered Microsoft Office apps, leveraging them to streamline workflows and deliver compelling presentations.</p>
+                        <p> I'm excited to collaborate and transform ideas into reality through technology!</p>
+                       
+                        <div class="tab-titles">
+                              <p class="tab-links active-link" onclick ="opentab('skills')">Skills</p>
+                              <p class="tab-links" onclick ="opentab('experience')">Experience</p>
+                              <p class="tab-links" onclick ="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id = "skills">
+                              <ul>
+                                    <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                                    <li><span>Web Development</span><br>Web app Development</li>
+                              </ul>
+                        </div>
+                        <div class="tab-contents" id = "experience">
+                              <ul>
+                                    <li><span>2022 - 2023</span><br> Club house Manager at Wits</li>
+                                    <li><span></span><br></li>
+                                    <li><span></span><br></li>
+                              </ul>
+                        </div>
+                        <div class="tab-contents" id = "education">
+                              <ul>
+                                    <li><span>2024</span><br>Harvard CS50: online course</li>
+                                    <li><span>2024</span><br>freeCodeCamp online courses</li>
+                              </ul>
+                        </div>
+                  </div>
+            </div>
+      </div>
+ </div>
+<!-- ---services--- -->
+ <div id="services">
+      <div class="container">
+            <h1 class="sub-title">Services</h1>
+            <div class="services-lists">
+            <div>
+                  <i class="fa-solid fa-code"></i>
+                  <h2>Web Design</h2>
+                  <p>UI/UX design is about crafting intuitive, user-friendly digital experiences. UI focuses on visual elements like buttons and typography, ensuring they enhance usability. UX design involves understanding user behaviors, conducting research, and creating wireframes to optimize the user journey.</p>
+                  <a href="https://www.interaction-design.org/literature/topics/web-design" > Learn more</a>
+            </div>  
+            <div>
+                  <i class="fa-solid fa-crop"></i>
+                  <h2>UI/UX Design</h2>
+                  <p>App design tailors interfaces for mobile applications, considering screen size and touch interactions. Designers follow platform-specific guidelines for consistency and usability. Effective app design delivers seamless interactions and meaningful functionalities for users.</p>
+                  <a href="https://www.uxdesigninstitute.com/blog/ux-vs-ui-design/" > Learn more</a>
+            </div>  
+      </div>
+ </div>
+
+ <!-- ---portfolio--- -->
+<div id="portfolio">
+      <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="portfolio-lists">
+                  <div class="portfolio-item">
+                        <img src="images/portfolio-1.png" alt="portfolio-1" class="portfolio">
+                        <div class="layer">
+                              <h3>Romain Numeral Converter</h3>
+                              <p>This app is based on javascript converting numbers into Romain Numeral characters</p>
+                              <a href="https://www.freecodecamp.org/certification/Msizi12/javascript-algorithms-and-data-structures-v8"><i class="fa-solid fa-calculator"></i></a>
+                        </div>
+                  </div>
+                  <div class="portfolio-item">
+                        <img src="images/portfolio-2.png" alt="portfolio-2" class="portfolio">
+                        <div class="layer">
+                              <h3>Cash Register App</h3>
+                              <p>A small interactive cash register built on javascript</p>
+                              <a href="https://www.freecodecamp.org/certification/Msizi12/javascript-algorithms-and-data-structures-v8"><i class="fa-solid fa-money-bill"></i></a>
+                        </div>
+                  </div>
+            </div>
+      </div> 
+</div>
+      
+<!-- ---contact--- -->
+ <div id="contact">
+      <div class="container">
+            <div class="row">
+                  <div class="ccontact-left">
+                        <h1 class=""sub-title>Contact Me</h1>
+                        <p><i class="fa-solid fa-envelope"></i> ezramthethwa1@gmail.com</p>
+                        <p><i class="fa-solid fa-phone-volume"></i> +27 84 321 0201</p>
+                        <div class="social-icons">
+                              <a href="https://www.linkedin.com/in/msizi-mthethwa-4553b929b/"><i class="fa-brands fa-linkedin"></i></a>
+                              <a href="https://www.freecodecamp.org/Msizi12"><i class="fa-brands fa-free-code-camp"></i></a>
+                              <a href="https://github.com/Msizi1"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <a href="images/resume.pdf" download class="btn btn2">Download Resume</a>
+                  </div>
+                  <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                              <input type="text" name="Name" placeholder="Your name" required>
+                              <input type="email" name="emai" placeholder="Your email" required>
+                              <textarea name="message" placeholder="Your message" rows="6" required></textarea>
+                              <button type ="submit" class="btn btn2">Submit</button>
+                        </form>
+                  </div>
+            </div>
+      </div>
+      <div class="copyright">
+            <p>Copyright &copy;Made by Msizi Mthethwa 2024</p>
+      </div>
+ </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+ function opentab(tabname){
+      for ( let tablink of tablinks){
+            tablink.classList.remove("active-link")
+      }
+      for ( let tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+ }
+    </script>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+            sidemenu.style.right = "0";
+      }
+      function closemenu(){
+            sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzRCsUgIGD10ucp-ha7OhbnraJ_uwdIegBxd_-V3NMIaYBJeIBuxlklX8GL2uw5y8M/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+</body>
+</html>
